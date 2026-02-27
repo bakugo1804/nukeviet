@@ -1,3 +1,9 @@
 [Sat, 28 Feb 2026 02:35:05 +0700] [localhost] [::1] [Warning(2): Undefined array key "list"] [FILE: /modules/demo/admin/add.php] [LINE: 7] [TRACE:]
 #1  LINE: 182   FILE: /admin/index.php
 
+[Sat, 28 Feb 2026 02:53:38 +0700] [localhost] [::1] [Warning(2): Undefined array key "Khoa"] [FILE: /modules/datlichkham/funcs/main.php] [LINE: 16] [TRACE:]
+#1  LINE: 345   FILE: /index.php
+
+[Sat, 28 Feb 2026 02:53:38 +0700] [localhost] [::1] [Warning(2): Undefined array key "Khoa"] [FILE: /modules/datlichkham/funcs/main.php] [LINE: 25] [TRACE:]
+#1  LINE: 345   FILE: /index.php
+
