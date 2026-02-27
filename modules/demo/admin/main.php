@@ -21,6 +21,8 @@ $xtpl->assign('GLANG', $lang_global);
 if (!empty($array)) {
     foreach ($array as $value) {
         $value['birthday'] = nv_date('d/m/Y', $value['birthday']);
+        $value['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=edit&id=' . $value['id'];
+        $value['url_del'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=del&id=' . $value['id'];
         $xtpl->assign('DATA', $value);
         $xtpl->parse('main.loop');
     }
