@@ -21,6 +21,8 @@ if (!empty($array)) {
     $stt = 1;
     foreach ($array as $value) {
         $value['stt'] = $stt++;
+        $value['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=edit&idbn=' . $value['idbn'];
+        $value['url_del'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=del&idbn=' . $value['idbn'];
         $xtpl->assign('DATA', $value);
         $xtpl->parse('main.loop');
     }

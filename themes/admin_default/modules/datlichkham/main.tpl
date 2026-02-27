@@ -5,6 +5,7 @@
         <colgroup>
             <col class="w50">
             <col span="4">
+            <col class="w150">
         </colgroup>
         <thead>
             <tr class="text-center">
@@ -13,6 +14,7 @@
                 <th class="text-nowrap">SĐT</th>
                 <th class="text-nowrap">Bệnh/Triệu chứng</th>
                 <th class="text-nowrap">Bác sĩ</th>
+                <th class="text-nowrap">Thao tác</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +25,10 @@
                 <td class="text-nowrap">{DATA.sdt}</td>
                 <td class="text-nowrap">{DATA.benh}</td>
                 <td class="text-nowrap">{DATA.bacsi}</td>
+                <td class="text-nowrap">
+                    <a href="{DATA.url_edit}" class="btn btn-sm btn-primary" title="Sửa"><i class="fa fa-edit"></i> Sửa</a>
+                    <a href="{DATA.url_del}" class="btn btn-sm btn-danger" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa lịch khám này?');"><i class="fa fa-trash"></i> Xóa</a>
+                </td>
             </tr>
             <!-- END: loop -->
         </tbody>
