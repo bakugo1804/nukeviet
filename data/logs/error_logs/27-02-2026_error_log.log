@@ -7,3 +7,10 @@
 [Sat, 28 Feb 2026 02:53:38 +0700] [localhost] [::1] [Warning(2): Undefined array key "Khoa"] [FILE: /modules/datlichkham/funcs/main.php] [LINE: 25] [TRACE:]
 #1  LINE: 345   FILE: /index.php
 
+[Sat, 28 Feb 2026 03:20:55 +0700] [localhost] [::1] [Warning(2): Undefined variable $page_config] [FILE: /modules/page/admin/main.php] [LINE: 62] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Sat, 28 Feb 2026 03:23:03 +0700] [localhost] [::1] [Warning(2): Undefined array key "main"] [FILE: /themes/so_y_te/theme.php] [LINE: 73] [TRACE:]
+#1  LINE: 345   FILE: /index.php
+#2  LINE: 68    FILE: /modules/datlichkham/funcs/main.php
+
