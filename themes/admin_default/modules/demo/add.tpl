@@ -10,13 +10,13 @@
 
             <tr>
                 <td><strong>Khoa</strong><sup class="required">(*)</sup></td>
-                <td><input type="text" name="Khoa" id="title" class="w300 form-control" value="{DATA.Khoa}" ></td>
+                <td><input type="text" name="khoa" id="title" class="w300 form-control" value="{DATA.khoa}" ></td>
                 <td>&nbsp;</td>
             </tr>
 
             <tr>
                 <td><strong>SDT</strong><sup class="required">(*)</sup></td>
-                <td><input type="text" name="SDT" id="title" class="w300 form-control" value="{DATA.SDT}" ></td>
+                <td><input type="text" name="sdt" id="title" class="w300 form-control" value="{DATA.sdt}" ></td>
                 <td>&nbsp;</td>
             </tr>
 

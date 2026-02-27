@@ -22,17 +22,19 @@ if ($id > 0) {
 // Xử lý khi bấm nút Lưu
 if ($nv_Request->isset_request('submit1', 'post')) {
     $row['name'] = nv_substr($nv_Request->get_title('name', 'post', ''), 0, 250);
-    $row['Khoa'] = nv_substr($nv_Request->get_title('Khoa', 'post', ''), 0, 250);
-    $row['SDT'] = nv_substr($nv_Request->get_title('SDT', 'post', ''), 0, 250);
-    $row['birthday'] = $nv_Request->get_int('birthday', 'post', '');
+    $row['khoa'] = nv_substr($nv_Request->get_title('khoa', 'post', ''), 0, 250);
+    $row['sdt'] = nv_substr($nv_Request->get_title('sdt', 'post', ''), 0, 250);
+    $birthday_str = $nv_Request->get_title('birthday', 'post', '');
+    $birthday_arr = explode('/', $birthday_str);
+    $row['birthday'] = (count($birthday_arr) == 3) ? mktime(0, 0, 0, intval($birthday_arr[1]), intval($birthday_arr[0]), intval($birthday_arr[2])) : 0;
     $row['address'] = nv_substr($nv_Request->get_title('address', 'post', ''), 0, 250);
 
-    $_sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . ' SET name = :name, Khoa = :Khoa, SDT = :SDT, birthday = :birthday, address = :address WHERE id = :id';
+    $_sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . ' SET name = :name, khoa = :khoa, sdt = :sdt, birthday = :birthday, address = :address WHERE id = :id';
     $sth = $db->prepare($_sql);
     $sth->bindParam(':name', $row['name'], PDO::PARAM_STR);
-    $sth->bindParam(':Khoa', $row['Khoa'], PDO::PARAM_STR);
-    $sth->bindParam(':SDT', $row['SDT'], PDO::PARAM_STR);
-    $sth->bindParam(':birthday', $row['birthday'], PDO::PARAM_STR);
+    $sth->bindParam(':khoa', $row['khoa'], PDO::PARAM_STR);
+    $sth->bindParam(':sdt', $row['sdt'], PDO::PARAM_STR);
+    $sth->bindParam(':birthday', $row['birthday'], PDO::PARAM_INT);
     $sth->bindParam(':address', $row['address'], PDO::PARAM_STR);
     $sth->bindParam(':id', $id, PDO::PARAM_INT);
     $exe = $sth->execute();
@@ -43,8 +45,8 @@ if ($nv_Request->isset_request('submit1', 'post')) {
 }
 
 $row['name'] = isset($row['name']) ? $row['name'] : '';
-$row['Khoa'] = isset($row['Khoa']) ? $row['Khoa'] : '';
-$row['SDT'] = isset($row['SDT']) ? $row['SDT'] : '';
+$row['khoa'] = isset($row['khoa']) ? $row['khoa'] : '';
+$row['sdt'] = isset($row['sdt']) ? $row['sdt'] : '';
 $row['birthday'] = isset($row['birthday']) ? nv_date('d/m/Y', $row['birthday']) : '';
 $row['address'] = isset($row['address']) ? $row['address'] : '';
 

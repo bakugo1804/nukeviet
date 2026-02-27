@@ -14,7 +14,9 @@ function nv_demo_list($array_data)
     // $xtpl->assign('CONTENT', $row);
 
     if (!empty($array_data)) {
+    $stt = 1;
     foreach ($array_data as $value) {
+        $value['stt'] = $stt++;
         $value['birthday'] = nv_date('d/m/Y', $value['birthday']);
         $xtpl->assign('DATA', $value);
         $xtpl->parse('main.loop');

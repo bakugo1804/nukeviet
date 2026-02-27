@@ -19,10 +19,10 @@
         <tbody>
             <!-- BEGIN: loop -->
             <tr class="text-center">
-                <td class="text-nowrap">{DATA.id}</td>
+                <td class="text-nowrap">{DATA.stt}</td>
                 <td class="text-nowrap">{DATA.name}</td>
-                <td class="text-nowrap">{DATA.Khoa}</td>
-                <td class="text-nowrap">{DATA.SDT}</td>
+                <td class="text-nowrap">{DATA.khoa}</td>
+                <td class="text-nowrap">{DATA.sdt}</td>
                 <td class="text-nowrap">{DATA.birthday}</td>
                 <td class="text-nowrap">{DATA.address}</td>
             </tr>
